@@ -34,18 +34,18 @@ public class ObjectMoves : MonoBehaviour
 
         if(transform.position.x < -1.65f){
             toRight = true;
-            StartCoroutine(Wait());
+            StartCoroutine(Wait(5));
         }else if (transform.position.x > 0.35f){
             toRight = false;
-            StartCoroutine(Wait());
+            StartCoroutine(Wait(5));
         }
       
       
     }
 
-    IEnumerator Wait(){
+    IEnumerator Wait(int num){
         xSpeed = 0f;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(num);
         xSpeed = 0.03f;
     }
 
