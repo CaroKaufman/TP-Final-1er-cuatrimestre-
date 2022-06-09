@@ -19,7 +19,7 @@ public class PlayerDestroy : MonoBehaviour
             for (int i = counter; i< cloneAmount; i++)
             {
                 clon = Instantiate(objectToClone);
-                Destroy(clon);
+                Destroy(clon,1);
                 transform.position = new Vector3(0, 1, 0);
             }
             

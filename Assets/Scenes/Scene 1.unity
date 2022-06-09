@@ -121,7 +121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240886853}
-  - component: {fileID: 240886854}
   m_Layer: 0
   m_Name: PARED
   m_TagString: Untagged
@@ -143,30 +142,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &240886854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240886852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b00692ba02fd274d9d45840ac2c68d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xSpeed: 0.03
-  xRightLimit: 4
-  xLeftLimit: -4
-  toRight: 0
-  cubos:
-  - {fileID: 1546498054}
-  - {fileID: 1012890399}
-  - {fileID: 1827626770}
-  - {fileID: 1632260973}
-  - {fileID: 1597579320}
-  elegirNum: 0
-  WaitMove: 0
 --- !u!1 &456049477
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886601208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.08, y: -2.79, z: 0}
+  m_LocalPosition: {x: -5.02, y: -2.79, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -570,6 +545,7 @@ GameObject:
   - component: {fileID: 1546498057}
   - component: {fileID: 1546498056}
   - component: {fileID: 1546498055}
+  - component: {fileID: 1546498059}
   m_Layer: 0
   m_Name: Cubo1_Pared
   m_TagString: Untagged
@@ -649,6 +625,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1546498059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546498054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2335c1ee9a0a4734ca9033f4b1d5d9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.03
+  waited: 0
+  toRight: 0
 --- !u!1 &1597579320
 GameObject:
   m_ObjectHideFlags: 0
