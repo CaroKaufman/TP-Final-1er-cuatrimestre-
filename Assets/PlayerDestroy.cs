@@ -9,22 +9,45 @@ public class PlayerDestroy : MonoBehaviour
     int cloneAmount =  5;
     GameObject clon;
   
+    
+    
 
+    void Start()
+    {
+      
+       
+    }
+    
+    void Update()
+    {
+
+        
+
+    }
+    
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "DeathFloor")
         {
-            clon = Instantiate(objectToClone);
+                                 
             int counter = 0;
             for (int i = counter; i< cloneAmount; i++)
             {
                 clon = Instantiate(objectToClone);
-                Destroy(clon,1);
-                transform.position = new Vector3(0, 1, 0);
+                                
             }
+            StartCoroutine(Wait(3));
+            Destroy(clon);
             
+
         }  
              
+
+    }
+    IEnumerator Wait(int num)
+    {
+        yield return new WaitForSeconds(num);
+      
 
     }
 }

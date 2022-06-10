@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 456049478}
   m_Layer: 0
   m_Name: BASE
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 658485483}
   m_Layer: 0
   m_Name: Cubo3_Base
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 1621354888}
   m_Layer: 0
   m_Name: Cubo4_Base
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 2001611545}
   m_Layer: 0
   m_Name: Cubo2_Base
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,6 +1164,41 @@ Transform:
   m_Father: {fileID: 456049478}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2002834636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2974534645969917577, guid: 8dc1c3750a099704fb0c77024157f478,
+    type: 3}
+  m_PrefabInstance: {fileID: 2974534645594800846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2002834637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002834636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b55e40ca0224ca4ab66bce9c00f59ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.1
+  jumpForce: 5
+  maxJumps: 1
+--- !u!114 &2002834638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002834636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31e90f3c0131d44dab2f61bc54a5a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToClone: {fileID: 2974534645969917577, guid: 8dc1c3750a099704fb0c77024157f478,
+    type: 3}
 --- !u!1 &2025254975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1213,7 @@ GameObject:
   - component: {fileID: 2025254976}
   m_Layer: 0
   m_Name: Cubo5_Base
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1269,7 +1304,7 @@ GameObject:
   - component: {fileID: 2032730734}
   m_Layer: 0
   m_Name: Cubo1_Base
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1418,11 +1453,23 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3847203207169098454, guid: 8dc1c3750a099704fb0c77024157f478,
+        type: 3}
+      propertyPath: BASE
+      value: 
+      objectReference: {fileID: 658485482}
     - target: {fileID: 6698517212305529402, guid: 8dc1c3750a099704fb0c77024157f478,
         type: 3}
       propertyPath: objectToClone
       value: 
       objectReference: {fileID: 2974534645969917577, guid: 8dc1c3750a099704fb0c77024157f478,
         type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 6698517212305529402, guid: 8dc1c3750a099704fb0c77024157f478,
+        type: 3}
+      propertyPath: resetPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3847203207169098454, guid: 8dc1c3750a099704fb0c77024157f478, type: 3}
+    - {fileID: 6698517212305529402, guid: 8dc1c3750a099704fb0c77024157f478, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8dc1c3750a099704fb0c77024157f478, type: 3}

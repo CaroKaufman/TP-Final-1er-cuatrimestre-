@@ -21,7 +21,7 @@ public class ObjectMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-      
+             //Si esperó 5 segundos el cubo va para adelante
             if(toRight)
             {
                 transform.position += new Vector3(xSpeed, 0, 0);            
@@ -34,18 +34,21 @@ public class ObjectMoves : MonoBehaviour
 
         if(transform.position.x < -1.65f){
             toRight = true;
-            StartCoroutine(Wait(5));
-        }else if (transform.position.x > 0.35f){
+            StartCoroutine(Wait());
+            
+        }
+        else if (transform.position.x > 0.35f){
             toRight = false;
-            StartCoroutine(Wait(5));
+            StartCoroutine(Wait());
+            
         }
       
       
     }
 
-    IEnumerator Wait(int num){
+    IEnumerator Wait(){
         xSpeed = 0f;
-        yield return new WaitForSeconds(num);
+        yield return new WaitForSeconds(5);
         xSpeed = 0.03f;
     }
 
