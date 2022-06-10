@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class PlayerDestroy : MonoBehaviour
 {
     public GameObject objectToClone;
-    int cloneAmount =  5;
+    int cloneAmount =  2;
     GameObject clon;
-  
+    public GameObject Player;
     
     
 
     void Start()
     {
-      
-       
+        //StartCoroutine(Wait(5));
     }
     
     void Update()
@@ -27,27 +26,23 @@ public class PlayerDestroy : MonoBehaviour
     
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "DeathFloor")
+        if (col.gameObject.name == "DeathFloor"  && Player.name == "Player")
         {
-                                 
-            int counter = 0;
-            for (int i = counter; i< cloneAmount; i++)
+            
+            
+            for (int i = 0; i< cloneAmount; i++)
             {
                 clon = Instantiate(objectToClone);
-                                
+                Destroy(clon,3);
             }
-            StartCoroutine(Wait(3));
-            Destroy(clon);
+        
+            transform.position = new Vector3(0,1,0);
+             
+                     
             
-
         }  
              
 
     }
-    IEnumerator Wait(int num)
-    {
-        yield return new WaitForSeconds(num);
-      
-
-    }
+    
 }

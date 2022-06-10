@@ -1,19 +1,19 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMoves : MonoBehaviour
+public class BaseMoves : MonoBehaviour
 {
     public float xSpeed = 0.03f;
     public bool waited;
-    public bool toRight;
+    public bool toLeft;
     // public float xLeftLimit = -4f;
     // public float xRightLimit = 4f;
 
     // Start is called before the first frame update
     void Start()
     {
-        toRight = true;
+        toLeft = true;
         waited = true;
        
     }
@@ -21,24 +21,25 @@ public class ObjectMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-             //Si esperó 5 segundos el cubo va para adelante
-            if(toRight)
+             //Si esperï¿½ 5 segundos el cubo va para adelante
+            if(toLeft)
             {
-                transform.position += new Vector3(xSpeed, 0, 0);            
+                transform.position -= new Vector3(xSpeed, 0, 0);            
             }            
             else
             {
-                transform.position -= new Vector3(xSpeed, 0, 0);
+                transform.position += new Vector3(xSpeed, 0, 0);
+                
             }            
          
 
-        if(transform.position.x < -1.65f){
-            toRight = true;
+        if(transform.position.x > 0.35f){
+            toLeft = true;
             StartCoroutine(Wait());
             
         }
-        else if (transform.position.x > 0.35f){
-            toRight = false;
+        else if (transform.position.x < -1.65f){
+            toLeft = false;
             StartCoroutine(Wait());
             
         }
@@ -51,6 +52,4 @@ public class ObjectMoves : MonoBehaviour
         yield return new WaitForSeconds(5);
         xSpeed = 0.03f;
     }
-
-
 }
