@@ -14,7 +14,7 @@ public class PlayerDestroy : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(Wait(5));
+        
     }
     
     void Update()

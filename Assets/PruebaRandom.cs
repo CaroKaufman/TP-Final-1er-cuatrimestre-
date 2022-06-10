@@ -17,40 +17,43 @@ public class PruebaRandom : MonoBehaviour
     {
         toRight = true;
         waited = true;
+       
         StartCoroutine(Espera());
        
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        
-            
-                
-             //Si espera 5 segundos el cubo va para adelante
-            if(toRight)
+    {
+        elegido = cubito[ElegirNum];
+        //Elige un cubo. Hace el loop. Elige otro cubo
+
+
+            if (toRight)
             {
-                 
-                elegido.transform.position += new Vector3(xSpeed, 0, 0);            
+            xSpeed = 0.03f;
+            elegido.transform.position += new Vector3(xSpeed, 0, 0);            
             }            
             else
             {
                 elegido.transform.position -= new Vector3(xSpeed, 0, 0);
             }            
          
-
-        if(elegido.transform.position.x < -1.65f){
-            toRight = true;
-            StartCoroutine(Wait());
             
+        if(elegido.transform.position.x < -1.65f)//-3.000055 
+        {
+            
+            StartCoroutine(Espera());
+            toRight = true;
+
         }
         else if (elegido.transform.position.x > 0.35f){
             toRight = false;
             StartCoroutine(Wait());
             
         }
-      
-      
+        
+
     }
 
     IEnumerator Wait(){
@@ -59,10 +62,11 @@ public class PruebaRandom : MonoBehaviour
         xSpeed = 0.03f;
     }
     IEnumerator Espera(){
-        yield return new WaitForSeconds(5);
+        xSpeed = 0f;
+
+        ElegirNum = Random.Range(0, 5);
+        yield return new WaitForSeconds(2);
         
-        ElegirNum = Random.Range(0,5);
-        elegido = cubito[ElegirNum];
     }
 }
 
