@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParedMoves : MonoBehaviour
 {
     public float xSpeed = 0.03f;
-    public bool waited;
+    
     public bool toRight;
 
     public GameObject[] cubito;
@@ -16,8 +16,7 @@ public class ParedMoves : MonoBehaviour
     void Start()
     {
         toRight = true;
-        waited = true;
-
+       
         StartCoroutine(Espera());
 
     }

@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class PlayerControls : MonoBehaviour
 {
+    //Audio
+    public AudioClip jumpSound;
+    AudioSource fuenteAudio;
     
     public float movementSpeed = 0.1f;
-    public float jumpForce = 5;
+    public float jumpForce = 2;
     public int maxJumps = 1;
-
     int hasJump;
     Rigidbody rb;
 
     void Start()
     {
+        fuenteAudio = GetComponent<AudioSource>();
+
         hasJump = maxJumps;
         rb = GetComponent<Rigidbody>();
     }
@@ -41,6 +45,9 @@ public class PlayerControls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && hasJump > 0)
         {
+            fuenteAudio.clip = jumpSound;
+            fuenteAudio.Play();
+
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             hasJump--;
 
