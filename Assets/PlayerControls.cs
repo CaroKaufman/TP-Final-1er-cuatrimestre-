@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class PlayerControls : MonoBehaviour
 {
     //Audio
     public AudioClip jumpSound;
     AudioSource fuenteAudio;
-    
+    public AudioClip biteSound;
+
     public float movementSpeed = 0.1f;
-    public float jumpForce = 2;
+    public float jumpForce = 1;
     public int maxJumps = 1;
     int hasJump;
     Rigidbody rb;
 
+
     void Start()
     {
+        
         fuenteAudio = GetComponent<AudioSource>();
-
+        
         hasJump = maxJumps;
         rb = GetComponent<Rigidbody>();
     }
@@ -61,6 +65,15 @@ public class PlayerControls : MonoBehaviour
         {
             hasJump = maxJumps;
         }
+        if (col.gameObject.tag == "Comida")
+        {
+            fuenteAudio.clip = biteSound;
+            fuenteAudio.Play();
+
+        }
+        
+
     }
+    
 
 }

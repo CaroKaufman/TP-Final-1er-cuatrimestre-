@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerDestroy : MonoBehaviour
@@ -37,6 +38,7 @@ public class PlayerDestroy : MonoBehaviour
             {
               transform.position = new Vector3(0, 1, 0);
               transform.rotation = Quaternion.Euler(0, 0, 0);
+                SceneManager.LoadScene("Scene 1");
               
             }
         }
