@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CambioColor : MonoBehaviour
-{
+{//https://www.youtube.com/watch?v=pvo0RCiqtLQ&t=181s
     public float speed= 1.0f;
     public Color startColor;
     public Color endColor;
