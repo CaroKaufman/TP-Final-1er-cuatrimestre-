@@ -62,6 +62,7 @@ public class PlayerControls : MonoBehaviour
             fuenteAudio.Play();
 
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             hasJump--;
 
         }
