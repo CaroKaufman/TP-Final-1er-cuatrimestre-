@@ -11,8 +11,8 @@ public class PlayerControls : MonoBehaviour
     AudioSource fuenteAudio;
     public AudioClip biteSound;
 
-    public float movementSpeed = 0.1f;
-    public float jumpForce = 1;
+    public float movementSpeed = 0.08f;
+    public float jumpForce = 2.5f;
     public int maxJumps = 1;
     int hasJump;
     Rigidbody rb;
@@ -33,18 +33,27 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(KeyCode.D) )
         {
             transform.Translate(0, 0, movementSpeed);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(-movementSpeed, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(movementSpeed, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(0, 0, -movementSpeed);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+         if (Input.GetKey(KeyCode.F))
+        {
+            transform.Translate(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (Input.GetKey(KeyCode.Space) && hasJump > 0)
