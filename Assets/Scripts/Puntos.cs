@@ -25,7 +25,7 @@ public class Puntos : MonoBehaviour
         if (counter == 1)
         {
             //txtPuntos = gameObject.GetComponent<Text>();
-            txtPuntos.text = "Puntos:" + puntos;
+            txtPuntos.text = ":" + puntos;
             counter--;
         }
         

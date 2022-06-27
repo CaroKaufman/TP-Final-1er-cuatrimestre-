@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
     public AudioClip biteSound;
 
     public float movementSpeed = 0.08f;
-    public float jumpForce = 2.5f;
+    public float jumpForce = 1.5f;
     public int maxJumps = 1;
     int hasJump;
     Rigidbody rb;
